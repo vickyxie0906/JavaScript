@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="jquery-3.4.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+    <div id="aaa"></div>
+    <div id="ccc" class="row row-cols-1 row-cols-md-3 g-4" style="padding:520px;"></div>
+    <script>
+        //ajax非同步下載資料(多工)
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/product/",
+            method:"GET",
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+                let ss = "";
+                var num=1; 
+                for (const x of data){
+                    //+=累加
+                    ss += 
+                    //` <div>
+                        
+                    //     <p>name ${x.name}</p>
+                    //     <p>price ${x.price}</p>
+                                         
+                    //     </div>`;
+                    `<div class="bbb">
+    <div class="card border-warning mb-3" style="max-width: 18rem;">
+        <div class="card-header">${num}</div>
+        <img src="${x.name}.jpg" style="height:200px" alt="">
+        <div class="card-body">
+            <h5 class="card-title">${x.name}</h5>
+            <p class="card-text">${x.price}</p>
+            <div style="text-align:right"><a href="#" class="btn btn-info">購物車</a></div>
+        </div>
+    </div>
+    </div>`;
+    num++;
+                }
+                console.log(ss);
+                ccc.innerHTML =ss;
+
+            },
+            error:function(xhr, status, error){
+                
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
+            }
+
+
+        }
+
+        );
+
+        // $.ajax({
+        //         url: "http://127.0.0.1:8000/api/product/1/",
+        //         method: "GET",
+        //         dataType: 'json',
+        //         success: function (data) {
+        //             console.log("-----success-----");
+        //             console.log(data);
+        //         },
+        //         error: function (xhr, status, error) {
+        //             console.log("----error-----");
+        //             console.log(xhr);
+        //             console.log(status);
+        //             console.log(error);
+        //         }
+
+
+        //     }
+
+        //     );
+
+
+    </script>
+    
+   
+
+</body>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函式
+        "use strict"
+        var a =square(2);
+        console.log("a="+a);
+
+        function square(number){
+            return number*number;
+        }
+
+        var b = square(3);
+        console.log("b=" + b);
+
+
+        var c = avg(100,99);//呼叫函式
+        console.log("------------");
+        console.log("a="+a);
+        console.log("b="+b);
+        console.log("c="+c);
+
+        function avg(a,b){
+            console.log("function avg(a,b)");
+            console.log("a="+a);
+            console.log("b="+b);
+            return(a+b)/2
+        }
+
+
+
+    </script>
+</body>
+</html>

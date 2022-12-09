@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="aaa">
+        內容
+
+    </div>
+    <script>
+        //arry
+        a=[];
+        a.push(3.14);
+        a.push(100);
+        a.push("hello");
+        console.log(a);
+
+        console.log("for of 批次讀取容器資料");
+        for (const x of a){
+            console.log(x)
+
+        }
+        //set
+        const fruits=new Set(["apple","banana"]);
+        fruits.add("cherry");
+        fruits.add("apple");
+        console.log(fruits);
+        console.log("for of 批次讀取容器資料");
+        for (const x of fruits){
+            console.log(x)
+        }
+
+        //object
+        const st ={
+            name:"Tom",
+            eng:100,
+            math:99,
+            total:null,
+            算總分:function(){
+                this.total=this.eng+this.math;
+                console.log("算總分 this.total="+ this.total);
+                return this.eng+this.math;
+            }
+        };
+        console.log(st);
+        console.log(st.name);
+        console.log(st.eng);
+        console.log(st.math);
+        console.log("總分=" + (st.eng + st.math));
+        console.log("總分=" + st.算總分());
+
+
+        //樣板字串(python f{字串}格式化),``-->印出整串段落文字
+        const s = `    
+        <p>姓名 ${st.name}</p>
+        <p>英文 ${st.eng}</p>
+        <p>數學 ${st.math}</p>
+        <p>總分 ${st.total}</p>`;
+
+
+        //尋找 id 為ccc網頁元素--->有變數
+        const aaa = document.getElementById("aaa");
+        console.log(aaa);
+        //innerHTML
+        aaa; //轉印成網頁
+
+        //無變數--->ccc=div id
+        document.getElementById("aaa").innerHTML = s;
+
+        //[{},{}]巢狀資料結構
+        const data = [{ name: "Tom", eng: 95 }, { name: "vicky", eng: 86 }];
+        let ss = "";    //let為變數,只在特定區域範圍有效,不設初值
+        for (const x of data) {
+
+            //累加
+            ss += `<div>
+            <p>姓名 ${x.name}</p>
+            <p>英文 ${x.eng}</p>
+            </div>`;
+        }
+        console.log(ss);
+        aaa.innerHTML = ss;
+
+        
+
+
+    </script>
+</body>
+</html>

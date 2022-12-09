@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lottery = [];
+            var n;
+            //跑迴圈，直到lottery陣列選滿6個號碼
+            while (lottery.length < 6) {
+                //隨機選出1~42之間的數字
+                n = Math.floor(Math.random() * 42) + 1;
+                //如果選出來的n不存在，就放入lottery陣列中
+                if (lottery.indexOf(n) === -1) {
+                    lottery.push(n)
+                }
+            }
+        console.log(lottery);
+        document.write('中獎號碼' + lottery);
+    
+
+
+    //     var lottery = [];
+    //         var n;
+    //         //讓迴圈跑6次
+    //         for (var i = 0; i < 6; i++) {
+    //             n = Math.floor(Math.random() * 42) + 1;
+    //             if (lottery.indexOf(n) === -1) {
+    //                 lottery.push(n);
+    //             }
+    //          }
+       
+    // console.log(lottery)
+    // // document.write(`中獎號碼${lottery}`);
+    // document.write('中獎號碼'+lottery);
+
+    </script>
+</body>
+</html>
